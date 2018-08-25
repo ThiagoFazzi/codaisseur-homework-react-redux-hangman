@@ -8,9 +8,9 @@ export default (state = [], action = {}) => {
                 ...action.payload
             }
         case MAKE_GUESS:
-            return{  
-                ...state,  
-                ...action.payload    
+            return{ 
+                ...state,
+                ...action.payload  
             }
         default:
             return state
