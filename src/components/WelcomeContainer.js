@@ -3,10 +3,6 @@ import WelcomeDisplay from './WelcomeDisplay'
 
 class WelcomeContainer extends React.PureComponent {
     
-    componentDidMount(){
-
-    }
-
     render(){
         return(
           <div>
