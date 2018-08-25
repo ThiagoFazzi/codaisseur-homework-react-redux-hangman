@@ -10,7 +10,6 @@ class WelcomeContainer extends React.PureComponent {
     render(){
         return(
           <div>
-            <h1>WelcomeContainer</h1>
             <WelcomeDisplay></WelcomeDisplay>
           </div>
         )

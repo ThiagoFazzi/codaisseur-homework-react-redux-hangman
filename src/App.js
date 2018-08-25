@@ -4,6 +4,7 @@ import store from './store'
 import './App.css';
 import { Route } from 'react-router-dom'
 import WelcomeContainer from './components/WelcomeContainer'
+import HangmanContainer from './components/HangmanContainer'
 
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <Route exact path="/" component={WelcomeContainer} />
+          <Route exact path="/hangman" component={HangmanContainer} />
         </div>
       </Provider>
     );
