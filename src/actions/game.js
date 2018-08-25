@@ -13,6 +13,8 @@ export function newGame(word) {
 export function makeGuess(letter) {
     return {
       type: MAKE_GUESS,
-      payload: letter
+      payload: {
+        letter: letter
+      }
     }
 }

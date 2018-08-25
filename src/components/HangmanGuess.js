@@ -34,6 +34,7 @@ export default class HangmanGuess extends React.PureComponent {
         <button value={'u'} onClick={this.handleNewGuess}>u</button>
         <button value={'v'} onClick={this.handleNewGuess}>v</button>
         <button value={'x'} onClick={this.handleNewGuess}>x</button>
+        <p>{this.props.letter}</p>
       </div>
     )
   }

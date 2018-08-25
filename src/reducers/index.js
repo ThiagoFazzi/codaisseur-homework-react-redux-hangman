@@ -8,12 +8,9 @@ export default (state = [], action = {}) => {
                 ...action.payload
             }
         case MAKE_GUESS:
-            console.log(state)
-            console.log(action.payload)
-
-            return { 
+            return{  
                 ...state,  
-                letters: [action.payload]    
+                ...action.payload    
             }
         default:
             return state

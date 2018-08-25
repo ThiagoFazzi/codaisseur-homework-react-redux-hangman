@@ -15,9 +15,9 @@ class HangmanContainer extends React.PureComponent {
     render(){
       if (!this.props.word) return 'Loading...'
         return(
-          <div>
-            <HangmanWord 
-              word={showGuess(this.props.word, this.props.letters)}>
+          <div>         
+            <HangmanWord               
+              word={showGuess(this.props.word, [this.props.letter])}>
             </HangmanWord>
             <HangmanGuess letter={this.props.letter} makeGuess={this.props.makeGuess}></HangmanGuess>
           </div>
@@ -25,12 +25,10 @@ class HangmanContainer extends React.PureComponent {
     }
 }
 
+
 const mapStateToProps = (state) => ({
   word: state.word,
-  letters: state.letters
+  letter: state.letter
 })
-
-
-//const mapStateToProps = ({ word }) => ({ word })
 
 export default  connect(mapStateToProps, { newGame, makeGuess })(HangmanContainer) 
