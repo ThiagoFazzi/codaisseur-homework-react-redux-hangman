@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
+        <div className="">
           <Route exact path="/" component={WelcomeContainer} />
           <Route exact path="/hangman" component={HangmanContainer} />
         </div>

@@ -1,0 +1,28 @@
+
+img{
+    width: 250px;
+    height: auto;
+}
+.hangman{
+    width: 100%;
+    display: inline-flex;
+}
+.hangmanImg {
+    width: 50%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+
+.hangmanWord {
+    width: 50%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+
+.hangmanWord h1{
+    font-size: 5.19em;
+}

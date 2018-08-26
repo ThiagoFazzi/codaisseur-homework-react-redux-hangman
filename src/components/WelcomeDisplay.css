@@ -1,0 +1,29 @@
+.btnStartGame{
+    width: 300px;
+    height: 100px;
+    border: 2px solid green;
+    background-color: greenyellow; 
+    border-radius: 25px;
+    text-align: center;
+    display: inline-block;
+}
+
+
+
+Link h2{
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+.welcomeDisplay{
+    width: 100%;
+    margin-top: 250px;
+    text-align: center;
+}
+
+.btnStartGame:active{
+    border: 2px solid yellow;
+    background-color: gold; 
+}

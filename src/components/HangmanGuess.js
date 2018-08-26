@@ -1,4 +1,9 @@
 import * as React from 'react'
+import './HangmanGuess.css';
+
+
+
+
 
 export default class HangmanGuess extends React.PureComponent {
 
@@ -39,7 +44,6 @@ export default class HangmanGuess extends React.PureComponent {
         <button key={'x'} value={'x'} onClick={this.handleNewGuess}>x</button>
         <button key={'y'} value={'y'} onClick={this.handleNewGuess}>y</button>
         <button key={'z'} value={'z'} onClick={this.handleNewGuess}>z</button>
-        <p>{this.props.letter}</p>
       </div>
     )
   }

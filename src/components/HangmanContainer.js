@@ -1,6 +1,6 @@
 import * as React from 'react'
-import HangmanWord from './HangmanWord'
 import HangmanGuess from './HangmanGuess'
+import HangmanDraw from './HangmanDraw'
 import { randomWord, showGuess, wrongGuessCount, gameFinished, isWinner, wrongGuessLimit } from '../lib/game'
 import { connect } from 'react-redux'
 import { newGame, makeGuess } from '../actions/game'
@@ -17,33 +17,39 @@ class HangmanContainer extends React.PureComponent {
       if(gameFinished(this.props.word, this.props.letters)) {
         if(wrongGuessLimit(this.props.word, this.props.letters)) {
           return(
-            <div>
-              <HangmanWord               
+            <div>  
+              <HangmanDraw               
+                members={wrongGuessCount(this.props.word, this.props.letters)}
                 word={showGuess(this.props.word, this.props.letters)}
-                letter={wrongGuessCount(this.props.word, this.props.letters)}
-                gameFinished={'YOU LOOSE'}>
-              </HangmanWord>
+                wrongLetterCounter={wrongGuessCount(this.props.word, this.props.letters)}
+                gameFinished={'YOU LOST! Try again...'}>
+              </HangmanDraw>
+              <HangmanGuess letter={this.props.letters} makeGuess={this.props.makeGuess}></HangmanGuess>
             </div>        
           )
         }
         if(isWinner(this.props.word, this.props.letters)){
           return(
             <div>
-              <HangmanWord               
+              <HangmanDraw               
+                members={wrongGuessCount(this.props.word, this.props.letters)}
                 word={showGuess(this.props.word, this.props.letters)}
-                letter={wrongGuessCount(this.props.word, this.props.letters)}
+                wrongLetterCounter={wrongGuessCount(this.props.word, this.props.letters)}
                 gameFinished={'YOU WON'}>
-              </HangmanWord>
+              </HangmanDraw>
+              <HangmanGuess letter={this.props.letters} makeGuess={this.props.makeGuess}></HangmanGuess>
             </div>        
           )
         }
       }
       return(
-        <div>      
-          <HangmanWord               
+        <div>
+          <HangmanDraw 
+            members={wrongGuessCount(this.props.word, this.props.letters)}
             word={showGuess(this.props.word, this.props.letters)}
-            letter={wrongGuessCount(this.props.word, this.props.letters)}>
-          </HangmanWord>
+            wrongLetterCounter={wrongGuessCount(this.props.word, this.props.letters)}>
+          </HangmanDraw>     
+
           <HangmanGuess letter={this.props.letters} makeGuess={this.props.makeGuess}></HangmanGuess>
         </div>
       )
