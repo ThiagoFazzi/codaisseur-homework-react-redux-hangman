@@ -1,6 +1,7 @@
 import * as React from 'react'
 import HangmanGuess from './HangmanGuess'
 import HangmanDraw from './HangmanDraw'
+import HangmanNewGame from './HangmanNewGame'
 import { randomWord, showGuess, wrongGuessCount, gameFinished, isWinner, wrongGuessLimit } from '../lib/game'
 import { connect } from 'react-redux'
 import { newGame, makeGuess } from '../actions/game'
@@ -9,6 +10,11 @@ import { newGame, makeGuess } from '../actions/game'
 class HangmanContainer extends React.PureComponent {
     
     componentDidMount(){
+      this.props.newGame(randomWord())
+    }
+
+    
+    newGame = (dispatch) => {
       this.props.newGame(randomWord())
     }
     
@@ -23,7 +29,9 @@ class HangmanContainer extends React.PureComponent {
                 word={showGuess(this.props.word, this.props.letters)}
                 wrongLetterCounter={wrongGuessCount(this.props.word, this.props.letters)}
                 gameFinished={'YOU LOST! Try again...'}>
+              <HangmanNewGame newGame={this.props.newGame}></HangmanNewGame>
               </HangmanDraw>
+              
               <HangmanGuess letter={this.props.letters} makeGuess={this.props.makeGuess}></HangmanGuess>
             </div>        
           )
