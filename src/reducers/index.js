@@ -4,14 +4,13 @@ export default (state = [], action = {}) => {
     switch(action.type){
         case NEW_GAME:
             return { 
-                ...state,
-                ...action.payload
+                ...action.payload,
+                letters: []
             }
         case MAKE_GUESS:
-            return{ 
-                ...state,
-                ...action.payload  
-            }
+            const stateArray = {...state}
+            stateArray.letters = [...stateArray.letters, action.payload.letter]
+            return stateArray
         default:
             return state
     }

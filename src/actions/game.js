@@ -5,7 +5,7 @@ export function newGame(word) {
     return {
       type: NEW_GAME,
       payload:{
-        word: word
+        word
       } 
     }
 }
@@ -14,7 +14,7 @@ export function makeGuess(letter) {
     return {
       type: MAKE_GUESS,
       payload: {
-        letter: letter
+        letter
       }
     }
 }
